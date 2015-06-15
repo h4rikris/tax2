@@ -9,6 +9,15 @@ public class ItemTest {
 
         Double tax = item.salesTax();
 
-        assertEquals(1.499, tax, 0.0d);
+        assertEquals(1.5, tax, 0.0d);
+    }
+
+    @Test
+    public void shouldCalculateTaxValueWithPrecision() {
+        Item item = new Item(14.99);
+
+        Double tax = item.salesTax();
+
+        assertEquals(1.50, tax, 0.0d);
     }
 }

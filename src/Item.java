@@ -8,6 +8,11 @@ public class Item {
 
     public Double salesTax() {
         Double tax = (10.0 * value)/100;
-        return tax;
+        return precision(tax);
     }
+
+    private Double precision(Double value) {
+        return Math.round(value * 20.0) / 20.0;
+    }
+
 }
