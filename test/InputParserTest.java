@@ -43,4 +43,13 @@ public class InputParserTest {
 
         assertFalse(result);
     }
+
+    @Test
+    public void shouldAbleToRecognizeFoodItem() {
+        InputParser inputParser = new InputParser();
+
+        boolean result = inputParser.isFoodItem("1 chocolate bar at 0.85");
+
+        assertTrue(result);
+    }
 }
