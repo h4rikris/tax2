@@ -24,4 +24,13 @@ public class InputParserTest {
 
         assertEquals(12.49, valueOfItem, 0.0d);
     }
+
+    @Test
+    public void shouldAbleToRecognizeImportedItem() {
+        InputParser inputParser = new InputParser();
+
+        boolean result = inputParser.isImportedItem("1 imported box of chocolates at 10.00");
+
+        assertTrue(result);
+    }
 }

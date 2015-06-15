@@ -25,4 +25,10 @@ public class InputParser {
         Double value = Double.parseDouble(String.valueOf(lastElement));
         return value;
     }
+
+    public boolean isImportedItem(String input) {
+        String[] list = input.split(" ");
+        String importConstant = "imported";
+        return importConstant.equals(list[1]);
+    }
 }
