@@ -15,4 +15,7 @@ public class Item {
         return Math.round(value * 20.0) / 20.0;
     }
 
+    public Double noTax() {
+        return 0.0;
+    }
 }

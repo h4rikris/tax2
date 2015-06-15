@@ -20,4 +20,13 @@ public class ItemTest {
 
         assertEquals(1.50, tax, 0.0d);
     }
+
+    @Test
+    public void shoudlCalculateTaxValueOfNonTaxableItem() {
+        Item item = new Item(14.99);
+
+        Double tax = item.noTax();
+        
+        assertEquals(0.0, tax, 0.0d);
+    }
 }
