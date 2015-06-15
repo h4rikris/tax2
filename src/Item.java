@@ -7,7 +7,7 @@ public class Item {
     }
 
     public Double salesTax() {
-        Double tax = (10.0 * value)/100;
+        Double tax = (10.0 * value) / 100;
         return precision(tax);
     }
 
@@ -17,5 +17,10 @@ public class Item {
 
     public Double noTax() {
         return 0.0;
+    }
+
+    public Double importTaxWithSalesTax() {
+        Double tax = (15.0 * value) / 100;
+        return precision(tax);
     }
 }
