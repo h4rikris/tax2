@@ -16,4 +16,12 @@ public class InputParserTest {
         assertTrue(items.containsValue(1));
     }
 
+    @Test
+    public void shouldAbleToParseValueOfItem() {
+        InputParser inputParser = new InputParser();
+
+        Double valueOfItem = inputParser.getValueOfItem("1 book at 12.49");
+
+        assertEquals(12.49, valueOfItem, 0.0d);
+    }
 }

@@ -9,8 +9,20 @@ public class InputParser {
     }
 
     public Map<Item, Integer> parse(String input) {
-        Integer numOfItems = Integer.parseInt(String.valueOf(input.charAt(0)));
-        itemList.put(new Item(0.0), numOfItems);
+        Integer numOfItems = convertToInteger(input);
+        Double itemValue = getValueOfItem(input);
+        itemList.put(new Item(itemValue), numOfItems);
         return itemList;
+    }
+
+    private int convertToInteger(String input) {
+        return Integer.parseInt(String.valueOf(input.charAt(0)));
+    }
+
+    public Double getValueOfItem(String input) {
+        String[] list = input.split(" ");
+        String lastElement = list[list.length - 1];
+        Double value = Double.parseDouble(String.valueOf(lastElement));
+        return value;
     }
 }
