@@ -26,4 +26,8 @@ public class Item {
         Double tax = (taxPercentage * value) / 100;
         return precision(tax);
     }
+
+    public Double importTaxWithOutSalesTax() {
+        return calculateTaxValue(5.0);
+    }
 }

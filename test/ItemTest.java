@@ -38,4 +38,13 @@ public class ItemTest {
 
         assertEquals(7.15, tax, 0.0d);
     }
+
+    @Test
+    public void shouldCalculateTaxValueOfImportedNonTaxableItem() {
+        Item item = new Item(10.00);
+
+        Double tax = item.importTaxWithOutSalesTax();
+
+        assertEquals(0.50, tax, 0.0d);
+    }
 }
