@@ -3,6 +3,7 @@ import org.junit.Test;
 import java.util.Map;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class InputParserTest {
@@ -32,5 +33,14 @@ public class InputParserTest {
         boolean result = inputParser.isImportedItem("1 imported box of chocolates at 10.00");
 
         assertTrue(result);
+    }
+
+    @Test
+    public void shouldReturnFalseOnNonImportedItem() {
+        InputParser inputParser = new InputParser();
+
+        boolean result = inputParser.isImportedItem("1 book at 12.49");
+
+        assertFalse(result);
     }
 }
